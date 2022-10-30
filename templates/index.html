@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+    <img src="/static/img/cloud.png" style="float: left; max-width: 48px; margin-right: 20px;" alt="">
+
+    <h1><span class="font-semi-bold">Fast Weather Service</span> <span class="smaller">A RESTful weather service</span>
+    </h1>
+    <br>
+    <br>
+
+    <div style="clear:both;"></div>
+    <br>
+    <br>
+    <p class="lead">
+    <ul>
+        <li>
+            <strong>Current weather in a city</strong><br>
+            </li><br>
+
+
+    <form id="todoForm" class="uk-form-horizontal" hx-post="/" hx-swap="beforeend" hx-target="#todoItems" hx-trigger="submit">
+      <div class="uk-margin uk-inline uk-width-1-1" uk-margin>
+        <input id="contentInput" autocomplete="off" class="uk-input" type="text" name="city" placeholder="Type city to get weather">
+      </div>
+    </form>
+    <br>
+    <ul id="todoItems" class="uk-list uk-list-divider" hx-target="closest li" hx-swap="outerHTML">
+      {% if weather %}
+        {% include 'test.html' with context %}
+      {% endif %}
+    </ul>
+         <br><br>
+
+            <div style="font-size: 12px;">
+                <strong>Parameters</strong>
+                <ul>
+                    <li>
+                        <strong>Required API</strong>: <code>city={city}</code> - the city you want to get the weather at.
+                    </li>
+                    <li>
+                        Example: <a href="city/sankt petersburg"
+               target="_blank"><strong>GET city/{city}</strong></a>
+                    </li>
+                    <li>
+                        If you need to reminder app pls <a href="">Click</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    </p>
+
+{% endblock %}

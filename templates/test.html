@@ -1,0 +1,9 @@
+<ul class="weather">
+    <li><img src="{{ city.weather.icon }}"></li>
+    <li>{{ city.weather.created }}</li>
+    <li>{{ city.weather.temp }}&#176</li>
+    <li>{{ city.weather.wind }} m/s</li>
+    <li>{{ city.weather.pressure }} mm</li>
+    <li>{{ city.weather.clouds }}</li>
+</ul>
+<button class="btn btn-dark" hx-delete="/" hx-target="#todoItems" hx-swap="outerHTML">Delete</button>
